@@ -251,43 +251,252 @@
 
 //                                                                              While loops
 
-// Write a program that asks the user to enter a number and then prints out all the odd numbers up to that number
-let i=0;
-let oddNum=Number(prompt("Enter A Number:"));
-while (i <= oddNum) {
-    i++;
-    if (i % 2!== 0) {
-        console.log(`${i} is odd number up to ${oddNum}`);
-    }
+// // Write a program that asks the user to enter a number and then prints out all the odd numbers up to that number
+// let i=0;
+// let oddNum=Number(prompt("Enter A Number:"));
+// while (i <= oddNum) {
+//     i++;
+//     if (i % 2!== 0) {
+//         console.log(`${i} is odd number up to ${oddNum}`);
+//     }
     
-}
+// }
 
 
-// Write a program that asks the user to enter a number and then prints out the multiplication table for that number, up to 10.
-let mulNum=Number(prompt("Enter A Number:"));
-i = 0;
-while (i <= 10) {
-    let mulNum1=mulNum * i;
-    console.log(`${mulNum} * ${i} = ${mulNum1}`);
+// // Write a program that asks the user to enter a number and then prints out the multiplication table for that number, up to 10.
+// let mulNum=Number(prompt("Enter A Number:"));
+// i = 0;
+// while (i <= 10) {
+//     let mulNum1=mulNum * i;
+//     console.log(`${mulNum} * ${i} = ${mulNum1}`);
+//     i++;
+// }
+
+
+
+// // Write a program that generates a random number between 1 and 100 and asks the user to guess it. The program should keep asking the user for guesses until they get the number.
+
+// let randomNumber = Math.floor(Math.random()*100);
+// console.log(randomNumber);
+// let askRandom = Number(prompt("Guess A Number Between 1 to 100"))
+
+// while (randomNumber!==askRandom) {
+//     askRandom = Number(prompt("Plzz Again Guess A Number Between 1 to 100"))
+// }
+// console.log("Congret You Guess The right random number");
+
+
+// // Write a program that asks the user to enter a word and then prints out the word in reverse order using while loop.
+
+// let word = prompt("Enter a word: ");  
+
+// i = word.length - 1;  
+
+// let reversedWord = "";  
+
+// while (i >= 0) {  
+//     reversedWord += word[i];  
+//     i--;  
+// }
+
+// console.log(reversedWord);  
+
+// // Write a program that asks the user to enter a series of numbers and then finds the sum and average of those numbers using while loop.
+// i = Number(prompt("Enter how many numbers you want to add and get average"));
+// let numAdd;
+// let j=1;
+// let sumNum=0;
+// while (j<=i) {
+//     numAdd=Number(prompt(`Enter ${j} Number:`));
+//     sumNum += numAdd;
+//     j++;
+// }
+// let avgNum = sumNum / i;
+
+// console.log(`The sum is ${sumNum}`);
+
+// console.log(`The average is ${avgNum}`);
+
+//                                                                      Do-while Loops
+
+// Write a program that asks the user to enter a password. Keep asking the user to enter a password until they enter the correct password.
+
+let password = prompt("Enter a password: ");
+do {
+    password = prompt("Plz Again Enter a password: ");
+} while (password!=="password");
+ 
+// Write a program that asks the user to enter a number and then prints out all the numbers from that number down to 1.
+
+let i=0;
+let numDown=Number(prompt("Enter A Number:"));
+do {
     i++;
-}
+    console.log(numDown);
+} while (i<=numDown);
 
-
-
-// Write a program that generates a random number between 1 and 100 and asks the user to guess it. The program should keep asking the user for guesses until they get the number.
+// Write a program that generates a random number between 1 and 100 and asks the user to guess it. The program should keep asking the user for guesses until they get the number .
 
 let randomNumber = Math.floor(Math.random()*100);
 console.log(randomNumber);
 let askRandom = Number(prompt("Guess A Number Between 1 to 100"))
 
-while (randomNumber!==askRandom) {
-    askRandom = Number(prompt("Plzz Again Guess A Number Between 1 to 100"))
+do {
+    askRandom = Number(prompt("Plz Again Guess A Number Between 1 to 100"))
+} while (randomNumber!==askRandom) 
+
+
+// Write a program that asks the user to enter a series of numbers and then finds the largest number. The program should keep asking the user for numbers until they enter a negative number.
+
+let largest = Number.NEGATIVE_INFINITY;  
+
+do {
+  let input = prompt("Enter a number:");  
+  let number = parseFloat(input);  
+
+  if (number > largest) {  
+    largest = number;  
+  }
+} while (number >= 0);  
+
+console.log("The largest number is " + largest);  
+
+// Write a program that asks the user to enter a series of words and then prints out the words in reverse order. The program should keep asking the user for words until they enter the word "stop" .
+let words = [];  
+
+do {
+  let input = prompt("Enter a word:");  
+  words.push(input);  
+} while (input !== "stop");  
+
+words.pop();  
+
+console.log("The words in reverse order are:");  
+
+for (let i = words.length - 1; i >= 0; i--) {  
+  console.log(words[i]);  
 }
-console.log("Congret You Guess The right random number");
+
+//                                                                                Switch Case:
+
+// Write a js program to print day of week name using switch case.
+let dayOfWeek = Number(prompt("Enter the day of week"));  
+
+switch (dayOfWeek) {
+  case 0:
+    console.log("Sunday");
+    break;
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  case 4:
+    console.log("Thursday");
+    break;
+  case 5:
+    console.log("Friday");
+    break;
+  case 6:
+    console.log("Saturday");
+    break;
+  default:
+    console.log("Invalid day of week");  
+    break;
+}
 
 
-// Write a program that asks the user to enter a word and then prints out the word in reverse order.
-let reverseWord=prompt("Enter A word You want to reverse");
-while () {
-    
+// Write a js program print total number of days in a month using switch case
+
+let month = prompt("Enter the month name:");  
+
+switch (month) {
+  case "January":
+  case "March":
+  case "May":
+  case "July":
+  case "August":
+  case "October":
+  case "December":
+    console.log("31 days");
+    break;
+  case "April":
+  case "June":
+  case "September":
+  case "November":
+    console.log("30 days");
+    break;
+  case "February":
+    console.log("28 or 29 days");
+    break;
+  default:
+    console.log("Invalid month name"); }
+
+// Write a js program to check whether an alphabet is vowel or consonant using switch case.
+let alphabet = prompt("Enter a Alphabet to check:");  
+
+switch (alphabet.toLowerCase()) {
+  case "a":
+  case "e":
+  case "i":
+  case "o":
+  case "u":
+    console.log(alphabet + " is a vowel");
+    break;
+  default:
+    console.log(alphabet + " is a consonant");
+    break;
+}
+ 
+
+// Write a js program to find maximum between two numbers using switch case
+let num1 = 10;  
+let num2 = 20;  
+let max;
+
+switch (max) {
+    case num1>num2:
+        max=num1;
+        break;
+
+    default:
+        max=num2;
+        break;
+}
+console.log("The maximum of " + num1 + " and " + num2 + " is " + max);
+
+
+// Write a js program to check whether a number is even or odd using switch case
+
+switch (num1) {
+    case num1%2==0:
+        console.log(num1 + " is even");
+        break;
+
+    default:
+        console.log(num1 + " is odd");
+        break;
+}
+
+
+// Write a js program to check whether a number is positive, negative or zero using switch case.
+let num = -10;  
+
+switch (Math.sign(num)) {
+  case 1:
+    console.log(num + " is positive");
+    break;
+  case -1:
+    console.log(num + " is negative");
+    break;
+  case 0:
+    console.log(num + " is zero");
+    break;
+  default:
+    console.log(num + " is not a number");
+    break;
 }
